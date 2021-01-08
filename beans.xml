@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean id="jobs" class="model.Jobs">
+        <constructor-arg name="typeOfJob" value="Full time"/>
+        <constructor-arg name="salary" value="1000"/>
+        <constructor-arg name="isInsured" value=" False"/>
+    </bean>
+
+
+    <bean id="shop" class="model.ShoppingMalls">
+        <constructor-arg name="nameOfMall" value="Kohl's"/>
+        <constructor-arg name="numberOfMall" value="5"/>
+    </bean>
+
+
+    <bean id="student" class="model.Student">
+        <constructor-arg name="studentName" value="Sandesh"/>
+        <constructor-arg name="gender" value="Male"/>
+        <constructor-arg name="visaStatus" value="F1"/>
+    </bean>
+
+
+    <bean id="university" class="model.University">
+        <constructor-arg name="faculty" value="Science"/>
+        <constructor-arg name="numberOfStudents" value="500"/>
+        <constructor-arg name="mediumOfClass" value="Online"/>
+    </bean>
+
+
+
+    <bean id="upcomingProject" class="model.UpcomingProject">
+        <constructor-arg name="projectName" value="Plantation"/>
+        <constructor-arg name="typeOfProject" value="Renovation"/>
+        <constructor-arg name="budget" value="500000"/>
+    </bean>
+
+
+    <bean id="city" class="model.City">
+
+        <constructor-arg name="jobs" ref="jobs"/>
+        <constructor-arg name="shop" ref="shop"/>
+        <constructor-arg name="uni" ref="university"/>
+        <constructor-arg name="student" ref="student"/>
+        <constructor-arg name="project" ref="upcomingProject"/>
+
+
+    </bean>
+
+
+</beans>
